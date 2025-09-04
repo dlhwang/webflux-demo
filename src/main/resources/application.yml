@@ -1,0 +1,31 @@
+spring:
+  main:
+    web-application-type: reactive
+
+  data:
+    redis:
+      host: localhost
+      port: 6379
+
+  jackson:
+    serialization:
+      write-dates-as-timestamps: false   # Instant 등을 ISO-8601로 출력
+
+server:
+  port: 8080
+  compression:
+    enabled: false               # ⚠️ SSE는 압축 비권장 (버퍼링/지연 유발)
+  # http2:
+  #   enabled: false            # 필요 시 명시적으로 끌 수 있음(프록시 이슈 회피용)
+
+springdoc:
+  api-docs:
+    enabled: true                # /v3/api-docs
+  swagger-ui:
+    path: /docs                  # /docs 로 접근
+    display-request-duration: true
+    tags-sorter: alpha
+    operations-sorter: method
+
+logging:
+  config: classpath:logback-local.xml
