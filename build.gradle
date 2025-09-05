@@ -24,8 +24,8 @@ dependencies {
     implementation("org.springdoc:springdoc-openapi-starter-webflux-ui:2.6.0")
     implementation("org.springframework.boot:spring-boot-starter-data-redis-reactive")
     // lombok 쓰고 싶으면 아래 2줄 사용
-    // compileOnly("org.projectlombok:lombok:1.18.34")
-    // annotationProcessor("org.projectlombok:lombok:1.18.34")
+    compileOnly("org.projectlombok:lombok:1.18.34")
+    annotationProcessor("org.projectlombok:lombok:1.18.34")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
 }
 
